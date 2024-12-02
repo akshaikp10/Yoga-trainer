@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pose Detection</title>
+    <style>
+        body {
+            background-color: #FF0000; /* Red background */
+            color: #FFFFFF; /* White text */
+            text-align: center;
+        }
+        h1 {
+            color: #FFFFFF; /* White text */
+            font-weight: bold;
+            margin-bottom: 20px; /* Added margin */
+        }
+        #video_feed {
+            border: 4px solid #FFFFFF; /* White thick border */
+            display: block;
+            margin: 0 auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>Prayer Pose</h1>
+    <div>
+        <img id="video_feed" src="{{ url_for('video_feed') }}" width="640" height="480">
+    </div>
+
+    <script>
+        // Event listener to update status and angles information
+        const eventSource = new EventSource("/status");
+        eventSource.onmessage = function(event) {
+            // Update status function here if needed
+        };
+    </script>
+</body>
+</html>
+
+
